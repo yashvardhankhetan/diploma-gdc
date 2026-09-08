@@ -8,11 +8,9 @@ This folder is ready to upload as-is. It gives you:
 
 Cloudflare Pages hosts a static folder like this for free. No code, no build step.
 
-## Before uploading
+## Support address
 
-Both app pages still contain the placeholder address `CONTACT@EXAMPLE.COM`.
-Have Claude replace it with the real support email first (it is in two files here
-and in the app), or upload now and re-upload later — re-uploading takes a minute.
+The pages use diplomagdc@gmail.com. If it ever changes, edit both files here and in `gdc/web/`, then push.
 
 ## Steps in the Cloudflare dashboard (about five minutes)
 
