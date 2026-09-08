@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Diploma GDC</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1c1c1e; --muted: #55555c;
+    --rule: #e2e2e6; --accent: #0a5f9c; --card: #f5f5f7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131316; --fg: #ececf0; --muted: #a0a0a8;
+      --rule: #2c2c31; --accent: #6fb3e0; --card: #1d1d21;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 3rem 1.25rem 5rem;
+    background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 42rem; margin: 0 auto; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.2rem; margin: 2.5rem 0 .6rem; letter-spacing: -.01em; }
+  h3 { font-size: 1rem; margin: 1.5rem 0 .3rem; }
+  .date { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+  .lede {
+    background: var(--card); border-left: 3px solid var(--accent);
+    padding: 1rem 1.15rem; border-radius: 0 8px 8px 0; margin: 0 0 2rem;
+  }
+  .lede p { margin: 0; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  a { color: var(--accent); }
+  code {
+    background: var(--card); padding: .1em .35em;
+    border-radius: 4px; font-size: .9em;
+  }
+  footer {
+    margin-top: 3.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--rule); color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Diploma GDC — Support</h1>
+<p class="date">A graphing calculator and study companion for IB Diploma Mathematics</p>
+
+<div class="lede">
+  <p><strong>Need help, found a bug, or want something added?</strong> Email
+  <a href="mailto:CONTACT@EXAMPLE.COM">CONTACT@EXAMPLE.COM</a>. Please say which
+  iPhone or iPad you are using, which version of iOS, and — if something gave a
+  wrong answer — the exact expression you typed. That last detail is usually
+  enough to reproduce and fix it the same day.</p>
+</div>
+
+<h2>Before you email: the question everyone asks first</h2>
+
+<h3>Can I use this in my IB exam?</h3>
+<p><strong>No.</strong> No phone or tablet is permitted in an IB examination.
+This app is built for homework, revision and checking your work, and it is
+deliberately designed so that the habits you build in it transfer to the
+graphing calculator you are allowed to take in. The Toolkit tab lists the
+keystroke sequences for the approved handheld calculators for sixteen common
+operations, so you can practise the same operation on the hardware. Tools that
+no approved calculator can perform are badged <strong>Study only</strong>, and
+the computer algebra system is switched off by default for the same reason.</p>
+
+<h2>Common questions</h2>
+
+<h3>Why is my answer only showing three significant figures?</h3>
+<p>Three significant figures is the IB reporting convention, so it is the
+default. Settings will take anything from 1 to 12. Note that intermediate values
+are never rounded — rounding happens only when a result is displayed — and exact
+integers are shown in full, so <code>2^10</code> is 1024 rather than 1020.</p>
+
+<h3>Why did <code>1/2x</code> give a different answer than I expected?</h3>
+<p>The app reads implicit multiplication as binding more tightly than an
+explicit division sign, so <code>1/2x</code> means <code>1/(2x)</code>. This
+matches the Casio convention and the way the expression appears in the formula
+booklet. Some other calculators read it as <code>(1/2)x</code> — the two
+approved handhelds genuinely disagree with each other here. When it matters,
+bracket it.</p>
+
+<h3>Some tools are missing from the menus.</h3>
+<p>The course filter in Settings — AA SL, AA HL, AI SL, AI HL — hides everything
+outside the syllabus you picked, and filters the formula reference to match.
+Choose <em>Show all</em> to see everything.</p>
+
+<h3>How do I turn the computer algebra system on?</h3>
+<p>Settings, then CAS. It is off by default behind an explanation screen, and
+while it is on an orange banner sits above every tab. That banner is not a bug
+and cannot be dismissed: approved exam calculators deliberately exclude a CAS,
+and it should be obvious when you are relying on one.</p>
+
+<h3>Is my work saved? Is it sent anywhere?</h3>
+<p>It is saved automatically on your device, and it is sent nowhere. The app
+makes no network requests at all and collects nothing — see the
+<a href="./privacy.html">privacy policy</a>. It works fully in Airplane Mode.</p>
+
+<h3>How do I type a fraction, a root, or an integral?</h3>
+<p>Use the structure keys on the keypad. The editor is two-dimensional:
+fractions stack, roots take a vinculum, and integrals carry their limits.
+Pressing a structure key captures what you just typed — type <code>2</code> then
+the power key and 2 becomes the base. Backspace walks the structure rather than
+deleting characters blindly, so from the start of a denominator it moves to the
+end of the numerator. On a hardware keyboard, typing a slash builds a real
+fraction.</p>
+
+<h3>An unclosed bracket still evaluated.</h3>
+<p>That is intended. <code>sin(30</code> evaluates as <code>sin(30)</code>,
+which is what a handheld calculator does when you press EXE. A <em>surplus</em>
+closing bracket is still reported as an error, because that one is a genuine
+slip.</p>
+
+<h2>Things the app deliberately does not do</h2>
+<ul>
+  <li><strong>3D surfaces</strong> of the form z = f(x, y) are not plotted. 3D
+      primitives — lines, planes, spheres, cylinders, cones — are.</li>
+  <li><strong>General implicit relations</strong> typed directly, such as
+      x² + y² = 25, are handled through the Conic sections tool rather than a
+      general implicit plotter.</li>
+  <li><strong>Symbolic integration refuses rather than guesses.</strong> If it
+      cannot find an antiderivative it says so. For checking your own work, a
+      refusal is more useful than a confident wrong answer.</li>
+  <li><strong>Multi-step undo</strong> is not available. History is kept, and any
+      earlier result can be tapped to reuse.</li>
+  <li><strong>Programs cannot be imported.</strong> The built-in programming
+      language runs only what you type into the app.</li>
+</ul>
+
+<h2>Reporting a wrong answer</h2>
+<p>Mathematical correctness is the whole point of this app, so a wrong result is
+the most serious kind of bug it can have and is treated that way. If you find
+one, send the exact expression, what the app returned, and what you expected.
+If a markscheme or your teacher disagrees with the app, say so — a few
+conventions in the app are deliberate judgement calls between two defensible
+readings, and knowing which one your school teaches is genuinely useful.</p>
+
+<footer>
+<p class="notice">This app has been developed independently from and is not endorsed by the International Baccalaureate Organization. IB and Diploma Programme are registered trademarks of the International Baccalaureate Organization. TI-84 Plus CE is a trademark of Texas Instruments; fx-CG50 is a trademark of Casio Computer Co., Ltd.</p>
+  Diploma GDC · <a href="./privacy.html">Privacy Policy</a>
+</footer>
+
+</main>
+</body>
+</html>
